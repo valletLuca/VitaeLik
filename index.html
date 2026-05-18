@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vitæLIK accompagnement — Isabelle Klein · Naturopathie & bien-être · Sarrebourg</title>
+  <meta name="description" content="Naturopathie, réflexologie plantaire, drainage lymphatique et Fleurs de Bach à Sarrebourg. Un accompagnement global et naturel pour retrouver équilibre, énergie et vitalité." />
+  <link rel="icon" type="image/png" href="img/logo-vitaelik.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Curseur lumineux qui suit la souris -->
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <!-- Pollen flottant -->
+  <canvas class="pollen-canvas" id="pollenCanvas" aria-hidden="true"></canvas>
+
+  <!-- Grain / texture minérale -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Feuilles flottantes en fond -->
+  <div class="leaves-bg" aria-hidden="true">
+    <svg class="leaf leaf-1" viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95" /></svg>
+    <svg class="leaf leaf-2" viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95" /></svg>
+    <svg class="leaf leaf-3" viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95" /></svg>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="#accueil" class="brand">
+      <img src="img/logo-vitaelik.png" alt="VitaeLIK accompagnement" class="brand-logo" />
+    </a>
+    <nav class="site-nav">
+      <a href="#approche">Approche</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#cabinet">Cabinet</a>
+      <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
+    </nav>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Sarrebourg — Quartier de Hoff</p>
+      <h1 class="hero-title">
+        <span class="reveal">Retrouver l'</span><em class="reveal delay-1">équilibre</em><span class="reveal delay-2">,</span><br/>
+        <span class="reveal delay-3">naturellement.</span>
+      </h1>
+      <p class="hero-sub reveal delay-4">
+        Fatigue, stress, digestion, sommeil, émotions… et si la clé était déjà en vous&nbsp;? Je vous accompagne pas à pas, avec des outils 100% naturels, pour retrouver énergie, sérénité et vitalité.
+      </p>
+      <div class="hero-cta reveal delay-5">
+        <a href="#contact" class="btn btn-primary">Réserver mon bilan</a>
+        <a href="#prestations" class="btn btn-ghost">Découvrir les soins</a>
+      </div>
+
+      <!-- Trait dessiné main -->
+      <svg class="hand-line hand-line-hero" viewBox="0 0 600 80" aria-hidden="true">
+        <path d="M5 50 C 100 10, 200 80, 300 40 S 500 20, 595 55" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- APPROCHE -->
+  <section class="section approche" id="approche">
+    <div class="container two-col">
+      <div class="col-text">
+        <p class="eyebrow">L'approche</p>
+        <h2 class="section-title">Prendre soin du <em>vivant</em> en vous.</h2>
+        <p class="lede">
+          La naturopathie est une médecine traditionnelle reconnue par l'OMS. Elle ne se substitue pas à la médecine conventionnelle&nbsp;: elle l'accompagne, en douceur, en cherchant la cause plutôt qu'en taisant le symptôme.
+        </p>
+        <p>
+          Mon accompagnement s'appuie sur cinq piliers — l'alimentation, le mouvement, la respiration, la gestion émotionnelle et les plantes — pour construire avec vous un plan d'hygiène de vie réaliste, adapté à votre quotidien et à votre terrain.
+        </p>
+
+        <ul class="pillars">
+          <li><span>01</span>Approche globale et personnalisée</li>
+          <li><span>02</span>Écoute, bienveillance et respect</li>
+          <li><span>03</span>Méthodes naturelles et holistiques</li>
+          <li><span>04</span>Bien-être du corps, de l'esprit et des émotions</li>
+        </ul>
+      </div>
+
+      <div class="col-portrait">
+        <div class="portrait-frame">
+          <img src="img/IsabelleKlein.jpg" alt="Isabelle Klein, naturopathe à Sarrebourg" />
+          <div class="portrait-stamp">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="circlePath" d="M 60,60 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0" />
+              </defs>
+              <text font-size="9" letter-spacing="3" fill="currentColor">
+                <textPath href="#circlePath">ISABELLE KLEIN · PRATICIENNE · vitæK · SARREBOURG · </textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+        <p class="portrait-caption">Isabelle Klein — praticienne</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS / CARTES REMEDES -->
+  <section class="section prestations" id="prestations">
+    <div class="container">
+      <p class="eyebrow center">Les prestations</p>
+      <h2 class="section-title center">Quatre pratiques, une intention&nbsp;: <em>vous</em>.</h2>
+      <p class="section-lede center">Choisissez votre porte d'entrée — chaque séance est unique, pensée pour vous, et complètement personnalisable.</p>
+
+      <svg class="hand-line center-line" viewBox="0 0 400 30" aria-hidden="true">
+        <path d="M5 18 C 80 4, 160 28, 240 14 S 380 8, 395 20" />
+      </svg>
+
+      <div class="remedies">
+
+        <article class="remedy" data-remedy="naturopathie">
+          <div class="remedy-corner"></div>
+          <div class="remedy-corner br"></div>
+          <span class="remedy-no">N° 01</span>
+          <h3>Naturopathie</h3>
+          <p class="remedy-sub">Accompagnement global &amp; personnalisé</p>
+          <p class="remedy-desc">1h30 à 2h d'écoute approfondie pour comprendre ce qui se joue chez vous. Je repère vos déséquilibres, je vous remets un plan d'actions naturel clair et adapté — alimentation, sommeil, plantes, mouvement. Vous repartez avec des clés concrètes.</p>
+          <ul class="remedy-list">
+            <li><span>Bilan complet · 1h30 à 2h</span><b>70&nbsp;€</b></li>
+            <li><span>Suivi · 45min à 1h</span><b>50&nbsp;€</b></li>
+          </ul>
+          <svg class="remedy-leaf" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          <div class="float-leaves" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          </div>
+        </article>
+
+        <article class="remedy" data-remedy="reflexologie">
+          <div class="remedy-corner"></div>
+          <div class="remedy-corner br"></div>
+          <span class="remedy-no">N° 02</span>
+          <h3>Réflexologie plantaire</h3>
+          <p class="remedy-sub">Lâcher-prise par les pieds</p>
+          <p class="remedy-desc">Une heure de pure détente où chaque zone du pied raconte un organe. Une méthode douce, profonde, idéale pour soulager le stress, améliorer le sommeil et réveiller votre vitalité — sans rien forcer.</p>
+          <ul class="remedy-list">
+            <li><span>Séance · 1h</span><b>60&nbsp;€</b></li>
+            <li><span>Séance découverte · 30min</span><b>30&nbsp;€</b></li>
+          </ul>
+          <svg class="remedy-leaf" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          <div class="float-leaves" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          </div>
+        </article>
+
+        <article class="remedy" data-remedy="drainage">
+          <div class="remedy-corner"></div>
+          <div class="remedy-corner br"></div>
+          <span class="remedy-no">N° 03</span>
+          <h3>Drainage lymphatique</h3>
+          <p class="remedy-sub">Légèreté, élimination &amp; bien-être</p>
+          <p class="remedy-desc">Technique douce et manuelle qui favorise la circulation lymphatique, réduit les gonflements et procure une sensation profonde de légèreté.</p>
+          <ul class="remedy-list">
+            <li><span>Séance · 1h</span><b>70&nbsp;€</b></li>
+          </ul>
+          <svg class="remedy-leaf" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          <div class="float-leaves" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          </div>
+        </article>
+
+        <article class="remedy" data-remedy="bach">
+          <div class="remedy-corner"></div>
+          <div class="remedy-corner br"></div>
+          <span class="remedy-no">N° 04</span>
+          <h3>Fleurs de Bach</h3>
+          <p class="remedy-sub">Vos émotions en harmonies</p>
+          <p class="remedy-desc">38 fleurs, 38 états d'âme. Ensemble, on compose votre élixir floral sur-mesure pour traverser une épreuve, calmer une anxiété, retrouver confiance. Une méthode douce, naturelle, plus que centenaire — toujours aussi précieuse.</p>
+          <ul class="remedy-list">
+            <li><span>Consultation</span><b>60&nbsp;€</b></li>
+            <li><span>Suivi</span><b>45&nbsp;€</b></li>
+          </ul>
+          <svg class="remedy-leaf" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          <div class="float-leaves" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+            <svg viewBox="0 0 100 100"><path d="M50 5 C 80 25, 95 55, 50 95 C 5 55, 20 25, 50 5 Z M50 5 L50 95"/></svg>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="ateliers">
+        <div class="ateliers-text">
+          <p class="eyebrow">Ateliers &amp; entreprises</p>
+          <h3>Le bien-être, ensemble.</h3>
+          <p>Une autre façon d'aborder la santé naturelle&nbsp;: en groupe, en équipe, autour d'un thème à chaque fois différent. Sommeil, stress, alimentation, émotions… et des interventions sur-mesure pour les entreprises qui prennent soin de leurs équipes.</p>
+        </div>
+        <ul class="ateliers-list">
+          <li><span>Atelier découverte · 1h</span><b>20&nbsp;€</b></li>
+          <li><span>Atelier thématique · 2h</span><b>30 à 35&nbsp;€</b></li>
+          <li><span>Intervention en entreprise</span><b>Sur devis</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS / PACKS -->
+  <section class="section tarifs" id="tarifs">
+    <div class="container">
+      <p class="eyebrow center">Les packs</p>
+      <h2 class="section-title center">S'engager dans la durée, <em>en douceur</em>.</h2>
+      <p class="section-lede center">
+        Les vraies transformations prennent racine dans le temps. C'est pourquoi j'ai pensé ces forfaits pour vous accompagner sur la durée — avec jusqu'à <b>70&nbsp;€ d'économie</b> et une séance offerte.
+      </p>
+
+      <div class="packs">
+        <div class="pack">
+          <p class="pack-cat">Naturopathie</p>
+          <div class="pack-line">
+            <div>
+              <h4>Pack Équilibre</h4>
+              <span>Bilan complet + 2 suivis</span>
+            </div>
+            <div class="pack-price"><b>145&nbsp;€</b><em>½ séance offerte</em></div>
+          </div>
+          <div class="pack-line">
+            <div>
+              <h4>Pack Vitalité</h4>
+              <span>Bilan complet + 4 suivis</span>
+            </div>
+            <div class="pack-price"><b>220&nbsp;€</b><em>1 séance offerte</em></div>
+          </div>
+        </div>
+
+        <div class="pack">
+          <p class="pack-cat">Drainage lymphatique</p>
+          <div class="pack-line">
+            <div>
+              <h4>Cure légèreté</h4>
+              <span>3 séances</span>
+            </div>
+            <div class="pack-price"><b>175&nbsp;€</b><em>½ séance offerte</em></div>
+          </div>
+          <div class="pack-line">
+            <div>
+              <h4>Cure renouveau</h4>
+              <span>5 séances</span>
+            </div>
+            <div class="pack-price"><b>280&nbsp;€</b><em>1 séance offerte</em></div>
+          </div>
+        </div>
+
+        <div class="pack">
+          <p class="pack-cat">Réflexologie plantaire</p>
+          <div class="pack-line">
+            <div>
+              <h4>Pack 3 séances</h4>
+              <span>Pour ressentir, ancrer</span>
+            </div>
+            <div class="pack-price"><b>160&nbsp;€</b><em>½ séance offerte</em></div>
+          </div>
+          <div class="pack-line">
+            <div>
+              <h4>Pack 5 séances</h4>
+              <span>Pour transformer</span>
+            </div>
+            <div class="pack-price"><b>240&nbsp;€</b><em>1 séance offerte</em></div>
+          </div>
+        </div>
+
+        <div class="pack">
+          <p class="pack-cat">Fleurs de Bach</p>
+          <div class="pack-line">
+            <div>
+              <h4>Pack émotionnel</h4>
+              <span>3 séances</span>
+            </div>
+            <div class="pack-price"><b>125&nbsp;€</b><em>½ séance offerte</em></div>
+          </div>
+          <div class="pack-line">
+            <div>
+              <h4>Pack sérénité</h4>
+              <span>5 séances</span>
+            </div>
+            <div class="pack-price"><b>195&nbsp;€</b><em>1 séance offerte</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABINET -->
+  <section class="section cabinet" id="cabinet">
+    <div class="container">
+      <p class="eyebrow center">Le cabinet</p>
+      <h2 class="section-title center">Un lieu pour <em>respirer</em>.</h2>
+
+      <div class="gallery">
+        <figure class="gallery-item gi-1">
+          <img src="img/Bureau1.jpg" alt="Le cabinet vitæK — espace d'accueil" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gi-2">
+          <img src="img/Bureau2.jpg" alt="Le cabinet vitæIK — espace de consultation" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gi-3">
+          <img src="img/Bureau3.jpg" alt="Le cabinet vitæLIK — détail" loading="lazy" />
+        </figure>
+      </div>
+
+      <p class="cabinet-address">
+        Sarrebourg — Quartier de Hoff (57400)
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="eyebrow center">Prendre rendez-vous</p>
+      <h2 class="section-title center">Faisons connaissance.</h2>
+      <p class="section-lede center">
+        Un doute, une question, une envie d'avancer&nbsp;? Le premier pas est souvent le plus simple. Je vous réponds personnellement, sans engagement. La prise de rendez-vous se fait uniquement par téléphone.
+      </p>
+
+      <div class="contact-cards">
+        <a class="contact-card" href="tel:+33601802612">
+          <span class="cc-label">par téléphone</span>
+          <span class="cc-value">06 01 80 26 12</span>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a class="contact-card" href="mailto:vitalik.accompagnement@gmail.com">
+          <span class="cc-label">par e-mail</span>
+          <span class="cc-value">vitalik.accompagnement@gmail.com</span>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a class="contact-card" href="https://maps.google.com/?q=Sarrebourg+Hoff+57400" target="_blank" rel="noopener">
+          <span class="cc-label">au cabinet</span>
+          <span class="cc-value">Sarrebourg — Quartier de Hoff (57400)</span>
+          <span class="cc-arrow">→</span>
+        </a>
+      </div>
+
+      <p class="disclaimer">
+        Les soins proposés ne remplacent en aucun cas un avis ou un traitement médical. Ils s'inscrivent dans une démarche de bien-être et de prévention.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="img/logo-vitaelik.png" alt="VitaeLIK" class="footer-logo" />
+        <p>Une approche globale &amp; naturelle pour retrouver équilibre, énergie et vitalité.</p>
+      </div>
+      <div>
+        <h5>Naviguer</h5>
+        <a href="#approche">Approche</a>
+        <a href="#prestations">Prestations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#cabinet">Cabinet</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+33601802612">06 01 80 26 12</a>
+        <a href="mailto:vitalik.accompagnement@gmail.com">vitalik.accompagnement@gmail.com</a>
+        <span>Sarrebourg — Quartier de Hoff (57400)</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> vitæLIK accompagnement · Isabelle Klein</span>
+      <span>Site conçu avec soin par Vallet Luca.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

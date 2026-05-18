@@ -1,0 +1,5 @@
+pour le fond : texture minérale claire
+lumière qui suit légèrement la souris
+sections ou cartes qui apparaissent comme des “cartes de remèdes”
+feuilles qui flottent légèrement au hover
+lignes dessinées à la main qui apparaissent
