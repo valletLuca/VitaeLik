@@ -4,8 +4,9 @@
 
 // Lumière qui suit la souris (avec lissage)
 (() => {
-  const light = document.getElementById('cursorLight');
-  if (!light) return;
+  const glow   = document.getElementById('cursorLightGlow');
+  const shadow = document.getElementById('cursorLightShadow');
+  if (!glow && !shadow) return;
   let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
   let cx = tx, cy = ty;
 
@@ -16,7 +17,9 @@
   function loop() {
     cx += (tx - cx) * 0.08;
     cy += (ty - cy) * 0.08;
-    light.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    const t = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    if (glow)   glow.style.transform   = t;
+    if (shadow) shadow.style.transform = t;
     requestAnimationFrame(loop);
   }
   loop();

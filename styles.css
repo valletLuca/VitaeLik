@@ -100,16 +100,30 @@ body::before {
 .cursor-light {
   position: fixed;
   top: 0; left: 0;
-  width: 720px; height: 720px;
   pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(circle at center,
-    rgba(236, 201, 131, .35) 0%,
-    rgba(236, 201, 131, .12) 30%,
-    rgba(236, 201, 131, 0) 65%);
   transform: translate(-50%, -50%);
-  mix-blend-mode: multiply;
   will-change: transform;
+  border-radius: 50%;
+}
+/* Sur fonds sombres (taupe) : screen ajoute une lueur dorée chaude */
+.cursor-light--glow {
+  width: 225px; height: 225px;
+  background: radial-gradient(circle at center,
+    rgba(236, 201, 131, .70) 0%,
+    rgba(236, 201, 131, .28) 30%,
+    rgba(236, 201, 131, 0) 65%);
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+/* Sur fonds clairs (crème) : multiply assombrit subtilement — visible */
+.cursor-light--shadow {
+  width: 150px; height: 150px;
+  background: radial-gradient(circle at center,
+    rgba(110, 70, 15, .22) 0%,
+    rgba(110, 70, 15, .08) 38%,
+    rgba(110, 70, 15, 0) 62%);
+  mix-blend-mode: multiply;
+  z-index: 2;
 }
 @media (hover: none) { .cursor-light { display: none; } }
 
